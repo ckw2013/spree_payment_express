@@ -444,7 +444,7 @@ module Spree
       @payment_method ||= Spree::PaymentMethod.find(params[:payment_method_id])
     end
 
-    def payment_gateway
+    def payment_express_gateway
       payment_method.provider
     end
 
