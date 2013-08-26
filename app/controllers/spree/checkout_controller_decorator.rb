@@ -38,18 +38,6 @@ module Spree
 
       @gateway = payment_express_gateway
 
-      if Spree::Config[:auto_capture]
-        @ppx_response = @gateway.setup_purchase(opts[:money], opts)
-      else
-        redirect_to edit_order_checkout_url(@order, :state => "payment")
-      end
-
-      unless @ppx_response.success?
-        gateway_error(@ppx_response)
-        redirect_to edit_order_checkout_url(@order, :state => "payment")
-        return
-      end
-
       redirect_to(@gateway.redirect_url_for(@ppx_response.token, :review => payment_method.preferred_review))
     rescue ActiveMerchant::ConnectionError => e
       gateway_error I18n.t(:unable_to_connect_to_gateway)
