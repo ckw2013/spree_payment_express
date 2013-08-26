@@ -38,7 +38,7 @@ module Spree
 
       @gateway = payment_express_gateway
 
-      redirect_to(@gateway.redirect_url_for(@ppx_response.token, :review => payment_method.preferred_review))
+      redirect_to(@gateway.redirect_url_for(@ppx_response, :review => payment_method.preferred_review))
     rescue ActiveMerchant::ConnectionError => e
       gateway_error I18n.t(:unable_to_connect_to_gateway)
       redirect_to :back
