@@ -11,7 +11,7 @@ module Spree
       if Spree::Config[:auto_capture]
         @ppx_response = @gateway.setup_purchase(opts[:money], opts)
       else
-        @ppx_response = @gateway.setup_authorization(opts[:money], opts)
+        redirect_to edit_order_checkout_url(@order, :state => "payment")
       end
 
       unless @ppx_response.success?
@@ -41,7 +41,7 @@ module Spree
       if Spree::Config[:auto_capture]
         @ppx_response = @gateway.setup_purchase(opts[:money], opts)
       else
-        @ppx_response = @gateway.setup_authorization(opts[:money], opts)
+        redirect_to edit_order_checkout_url(@order, :state => "payment")
       end
 
       unless @ppx_response.success?
