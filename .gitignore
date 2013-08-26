@@ -1,0 +1,9 @@
+*.swp
+.DS_store
+.rvmrc
+.sass-cache
+.bundle
+coverage
+Gemfile.lock
+spec/test_app
+spec/dummy

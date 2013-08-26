@@ -1,0 +1,37 @@
+---
+en:
+  ipn_transaction: IPN Transaction
+  unknown_transaction: Unknown Transaction
+  edit_payment_info: Edit Payment Express Payment
+  payment_payment: Payment Express Payment
+  payment_txn_id: Transaction Code
+  payment_capture_complete: Payment Express Transaction has been captured.
+  unable_to_capture_payment: Unable to capture Payment Express Transaction.
+  signature: Signature
+  order_not_yet_placed: "Your order has <strong>NOT</strong> been be placed, please review the details and click <strong>Place Order</strong> below to finalize your order."
+  payment_payment_id: Payment Express Payment ID
+  pending_reason: Pending Reason
+  place_order: Place Order
+  result: Result
+  review: Review
+  no_shipping: No Shipping
+  cart_checkout: Checkout From Cart
+  payment_account: Payment Express Account
+  payer_id: Payer ID
+  payer_country: Country
+  payer_status: Status
+  payment_payer_statuses:
+    verified: verified
+    unverified: unverified
+  comment: Comment
+  account_details: Account Details
+  finalize:
+    paymentexpress: Capture Payment
+  activerecord:
+     attributes:
+       payment_payment:
+         amount: Amount
+     models:
+       payment_payment:
+         one: Payment Express Payment
+         other: Payment Express Payments
