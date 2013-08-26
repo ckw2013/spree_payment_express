@@ -30,6 +30,8 @@ module Spree
       load_order
       opts = all_opts(@order, params[:payment_method_id], 'payment')
 
+      @ppx_response = @gateway.setup_purchase(opts[:money], opts)
+
       if payment_method.preferred_cart_checkout
         opts.merge!(shipping_options)
       else
